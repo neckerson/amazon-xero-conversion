@@ -1,4 +1,4 @@
-# amazon-statement-conversion.rb
+# amazon-xero-conversion.rb
 This simple Ruby script preps an Amazon transaction report for importing into
 Xero as a CSV financial statement.
 
