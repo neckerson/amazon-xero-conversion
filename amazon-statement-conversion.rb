@@ -2,11 +2,11 @@ require 'date'
 require 'csv'
 
 i = 0
-hdr = ["Date", "Order", "ID", "SKU", "Transaction type", "Payment Type", "Payment Detail", "Amount", "Quantity", "Product", "Title"]
+hdr = ["Date", "Order ID", "SKU", "Transaction type", "Payment Type", "Payment Detail", "Amount", "Quantity", "Product Title"]
 
 
 # Create the output file
-CSV.open('transactions.csv', 'w', col_sep: ",") do |csv|
+CSV.open('transactions.csv', 'w', write_headers: true, headers: hdr, col_sep: ",") do |csv|
 
   # Open the input file (a tab-separated .txt file) and ignore the first three
   # rows, since they aren't useful
