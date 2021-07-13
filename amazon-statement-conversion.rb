@@ -17,6 +17,15 @@ CSV.open('transactions.csv', 'w', write_headers: true, headers: hdr, col_sep: ",
       # which is useless for our purposes. Using the methods below, converts
       # the time into a date, then back into the proper format
       row['Date'] = Date.strptime(row['Date'], '%B %d, %Y').strftime '%m/%d/%Y'
+
+      # Remove dollar signs from report, and handle occurances of empty Amount
+      # fields
+      if row['Amount'].nil?
+        row['Amount'] = '0.00'
+      else
+        row['Amount'].delete! '$'
+      end
+
       csv << row
     end
     i += 1
