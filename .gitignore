@@ -2,3 +2,5 @@
 /converted
 report.txt
 transactions.csv
+*.part
+/archive
